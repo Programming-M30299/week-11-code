@@ -2,7 +2,7 @@ class Laptop:
     def __init__(self, brand, basePrice):
         self.brand = brand
         self.basePrice = basePrice
-        self.ram = 8
+        self.ram = 4
         self.ramOptions = {
             4: 0,
             8: 50,
@@ -42,3 +42,7 @@ def testLaptop():
         laptop.getRam(), laptop.getPrice()))
 
     print(laptop)
+
+
+testLaptop()
+#
