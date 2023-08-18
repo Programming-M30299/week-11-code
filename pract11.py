@@ -38,7 +38,6 @@ class GamingLaptop(Laptop):
         "NVIDIA GTX 1650": 0,
         "NVIDIA RTX 3070": 250,
         "NVIDIA RTX 4080": 350,
-        "AMD RX 5700M": 180,
         "AMD RX 6800M": 280
     }
 
