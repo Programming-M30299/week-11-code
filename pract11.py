@@ -1,14 +1,15 @@
 class Laptop:
+    ramOptions = {
+        4: 0,
+        8: 50,
+        16: 100,
+        32: 200
+    }
+
     def __init__(self, brand, basePrice):
         self.brand = brand
         self.basePrice = basePrice
         self.ram = 4
-        self.ramOptions = {
-            4: 0,
-            8: 50,
-            16: 100,
-            32: 200
-        }
 
     def getBrand(self):
         return self.brand
@@ -31,7 +32,6 @@ class Laptop:
         output += " priced at £{}".format(self.getPrice())
         return output
 
-
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("The {} laptop with {} GB RAM costs £{}".format(
@@ -43,6 +43,4 @@ def testLaptop():
 
     print(laptop)
 
-
 testLaptop()
-#
