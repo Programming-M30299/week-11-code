@@ -32,10 +32,10 @@ class Laptop:
         output += " priced at £{}".format(self.getPrice())
         return output
 
+
 class GamingLaptop(Laptop):
     gpuOptions = {
-        "NVIDIA GTX 1650": 100,
-        "NVIDIA GTX 1660 Ti": 150,
+        "NVIDIA GTX 1650": 0,
         "NVIDIA RTX 3070": 250,
         "NVIDIA RTX 4080": 350,
         "AMD RX 5700M": 180,
@@ -55,31 +55,30 @@ class GamingLaptop(Laptop):
             self.basePrice += self.gpuOptions[gpu]
 
     def getPrice(self):
-        priceOfRam = self.ramOptions[self.ram]
+        price = super().getPrice()
         priceOfGPU = self.gpuOptions[self.gpu]
-        price = self.basePrice + priceOfRam + priceOfGPU
+        price = self.basePrice + priceOfGPU
         return price
 
     def __str__(self):
-        output = "{} Gaming Laptop with {} GB RAM and {}".format(
+        output = "{} Gaming Laptop with {} GB RAM and {} GPU".format(
             self.brand, self.ram, self.gpu)
-        output += " GPU priced at £{}".format(self.getPrice())
+        output += " priced at £{}".format(self.getPrice())
         return output
 
+
 def testGamingLaptop():
-    gaming_laptop = GamingLaptop("Alienware", 1499.99)
+    gamingLaptop = GamingLaptop("Alienware", 1499.99)
     print("The {} gaming laptop with {} GB RAM and {} GPU costs £{}".format(
-        gaming_laptop.getBrand(), gaming_laptop.getRam(),
-        gaming_laptop.getGPU(), gaming_laptop.getPrice()))
+        gamingLaptop.getBrand(), gamingLaptop.getRam(),
+        gamingLaptop.getGPU(), gamingLaptop.getPrice()))
 
-    gaming_laptop.setRam(32)
-    gaming_laptop.setGPU("NVIDIA RTX 3070")
+    gamingLaptop.setRam(32)
+    gamingLaptop.setGPU("NVIDIA RTX 3070")
     print("The RAM is now {} and the GPU is {}.".format(
-        gaming_laptop.getRam(), gaming_laptop.getGPU()))
+        gamingLaptop.getRam(), gamingLaptop.getGPU()))
 
-    print(gaming_laptop)
-
-testGamingLaptop()
+    print(gamingLaptop)
 
 
 def testLaptop():
