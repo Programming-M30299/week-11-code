@@ -1,40 +1,44 @@
-def sayHello():
-    print("Hello World")
+class Laptop:
+    def __init__(self, brand, basePrice):
+        self.brand = brand
+        self.basePrice = basePrice
+        self.ram = 8
+        self.ramOptions = {
+            4: 0,
+            8: 50,
+            16: 100,
+            32: 200
+        }
+
+    def getBrand(self):
+        return self.brand
+
+    def getRam(self):
+        return self.ram
+
+    def setRam(self, ram):
+        if ram in self.ramOptions:
+            self.ram = ram
+            self.basePrice += self.ramOptions[ram]
+
+    def getPrice(self):
+        priceOfRam = self.ramOptions[self.ram]
+        price = self.basePrice + priceOfRam
+        return price
+
+    def __str__(self):
+        output = "{} Laptop with {} GB RAM".format(self.brand, self.ram)
+        output += " priced at £{}".format(self.getPrice())
+        return output
 
 
-def sayHello2():
-    print("Hello")
-    print("World")
+def testLaptop():
+    laptop = Laptop("Dell", 999.99)
+    print("The {} laptop with {} GB RAM costs £{}".format(
+        laptop.getBrand(), laptop.getRam(), laptop.getPrice()))
 
+    laptop.setRam(16)
+    print("The RAM is now {} and the laptop costs £{}".format(
+        laptop.getRam(), laptop.getPrice()))
 
-def sayBye():
-    print("Goodbye Mars")
-
-
-# TODO: Write `sayBye2` function here
-
-
-# A simple kilograms to ounces conversion program
-# It asks for a weight in kilograms (for example 10)
-# and converts it to ounces (352.74)
-def kilos2Ounces():
-    kilos = float(input("Enter a weight in kilograms: "))
-    ounces = kilos * 35.274
-    print("The weight in ounces is", ounces)
-
-
-def count():
-    for number in range(10):
-        print("Number is now: ", number)
-
-
-# A simple euros to pounds conversion program
-# It asks for a value in euros (for example 10)
-# and converts it to pounds (8.7)
-def euros2Pounds():
-    euros = float(input("Enter a value in euros: "))
-    pounds = euros * 0.87
-    print("The value in pounds is", pounds)
-
-
-# TODO: Write `dollars2Pounds` and the rest of your solutions for the programming exercises here
+    print(laptop)
