@@ -68,25 +68,27 @@ class GamingLaptop(Laptop):
 
 def testGamingLaptop():
     gamingLaptop = GamingLaptop("Alienware", 1499.99)
-    print("The {} gaming laptop with {} GB RAM and {} GPU costs £{}".format(
-        gamingLaptop.getBrand(), gamingLaptop.getRam(),
-        gamingLaptop.getGPU(), gamingLaptop.getPrice()))
+    print("gaming laptop's brand is ", gamingLaptop.getBrand())
+    print("gaming laptop's RAM is ", gamingLaptop.getRam())
+    print("gaming laptop's GPU is ", gamingLaptop.getGPU())
+    print("gaming laptop's price is ", gamingLaptop.getPrice())
 
     gamingLaptop.setRam(32)
     gamingLaptop.setGPU("NVIDIA RTX 3070")
-    print("The RAM is now {} and the GPU is {}.".format(
-        gamingLaptop.getRam(), gamingLaptop.getGPU()))
+    print("gaming laptop's RAM is now ", gamingLaptop.getRam())
+    print("gaming laptop's GPU is now ", gamingLaptop.getGPU())
 
     print(gamingLaptop)
 
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
-    print("The {} laptop with {} GB RAM costs £{}".format(
-        laptop.getBrand(), laptop.getRam(), laptop.getPrice()))
+    print("laptop's brand is ", laptop.getBrand())
+    print("laptop's RAM is ", laptop.getRam())
+    print("laptop's price is ", laptop.getPrice())
 
     laptop.setRam(16)
-    print("The RAM is now {} and the laptop costs £{}".format(
-        laptop.getRam(), laptop.getPrice()))
+    print("laptop's RAM is now ", laptop.getRam())
+    print("laptop's price is now ", laptop.getPrice())
 
     print(laptop)
