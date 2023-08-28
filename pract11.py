@@ -26,6 +26,3 @@ def testLaptop():
     print("laptop's brand is ", laptop.getBrand())
     print("laptop's RAM is ", laptop.getRam())
     print("laptop's price is ", laptop.getPrice())
-
-
-testLaptop()
