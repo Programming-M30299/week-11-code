@@ -18,7 +18,8 @@ class Laptop:
         return self.ram
 
     def getPrice(self):
-        return self.basePrice
+        ramPrice = self.ramOptions[self.ram]
+        return self.basePrice + ramPrice
 
     def setRam(self, ram):
         if ram in self.ramOptions:
