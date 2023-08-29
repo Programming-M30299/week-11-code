@@ -23,6 +23,6 @@ class Laptop:
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
-    print("laptop's brand is ", laptop.getBrand())
-    print("laptop's RAM is ", laptop.getRam())
-    print("laptop's price is ", laptop.getPrice())
+    print("laptop's brand is", laptop.getBrand())
+    print("laptop's RAM is", laptop.getRam())
+    print("laptop's price is", laptop.getPrice())
