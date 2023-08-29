@@ -20,9 +20,18 @@ class Laptop:
     def getPrice(self):
         return self.basePrice
 
+    def setRam(self, ram):
+        if ram in self.ramOptions:
+            self.ram = ram
+
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
     print("laptop's RAM is", laptop.getRam())
     print("laptop's price is", laptop.getPrice())
+
+    laptop.setRam(32)
+    print("laptop's RAM is now", laptop.getRam())
+    laptop.setRam(30)
+    print("laptop's RAM is still", laptop.getRam())
