@@ -25,6 +25,11 @@ class Laptop:
         if ram in self.ramOptions:
             self.ram = ram
 
+    def __str__(self):
+        output = "{} Laptop with {} GB RAM".format(self.brand, self.ram)
+        output += " priced at £{}".format(self.getPrice())
+        return output
+
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
@@ -38,3 +43,5 @@ def testLaptop():
     print("laptop's RAM is still", laptop.getRam())
 
     print("laptop's price is now", laptop.getPrice())
+
+    print(laptop)
