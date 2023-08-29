@@ -36,3 +36,5 @@ def testLaptop():
     print("laptop's RAM is now", laptop.getRam())
     laptop.setRam(30)
     print("laptop's RAM is still", laptop.getRam())
+
+    print("laptop's price is now", laptop.getPrice())
