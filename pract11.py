@@ -36,6 +36,10 @@ class ShoppingCart:
         self.laptops = []
         self.total = 0
 
+    def addLaptop(self, laptop):
+        self.laptops.append(laptop)
+        self.total += laptop.getPrice()
+
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
