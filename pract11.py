@@ -69,3 +69,10 @@ def testShoppingCart():
     appleLaptop = Laptop("Apple", 1349.00)
     cart.addLaptop(dellLaptop)
     cart.addLaptop(appleLaptop)
+
+    laptops = cart.getLaptops()
+    print("Shopping cart contains:")
+    for laptop in laptops:
+        print(laptop)
+
+    print("Total price is £{}".format(cart.getTotal()))
