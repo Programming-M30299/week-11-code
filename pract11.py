@@ -46,6 +46,13 @@ class ShoppingCart:
     def getTotal(self):
         return self.total
 
+    def __str__(self):
+        output = "Shopping cart contains:\n"
+        for laptop in self.laptops:
+            output += str(laptop) + "\n"
+        output += "Total price is £{}".format(self.total)
+        return output
+
 
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
@@ -70,9 +77,11 @@ def testShoppingCart():
     cart.addLaptop(dellLaptop)
     cart.addLaptop(appleLaptop)
 
-    laptops = cart.getLaptops()
-    print("Shopping cart contains:")
-    for laptop in laptops:
-        print(laptop)
+    # laptops = cart.getLaptops()
+    # print("Shopping cart contains:")
+    # for laptop in laptops:
+    #     print(laptop)
 
-    print("Total price is £{}".format(cart.getTotal()))
+    # print("Total price is £{}".format(cart.getTotal()))
+
+    print(cart)
