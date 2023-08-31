@@ -31,6 +31,12 @@ class Laptop:
         return output
 
 
+class ShoppingCart:
+    def __init__(self):
+        self.laptops = []
+        self.total = 0
+
+
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
