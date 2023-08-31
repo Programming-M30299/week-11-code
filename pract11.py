@@ -59,3 +59,5 @@ def testLaptop():
 
 def testShoppingCart():
     cart = ShoppingCart()
+    cart.addLaptop(Laptop("Dell", 999.99))
+    cart.addLaptop(Laptop("Apple", 1299.99))
