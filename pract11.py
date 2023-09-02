@@ -54,6 +54,12 @@ class ShoppingCart:
         return output
 
 
+class GamingLaptop(Laptop):
+    def __init__(self, brand, basePrice):
+        super().__init__(brand, basePrice)
+        self.gpu = "NVIDIA GTX 1650"
+
+
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
