@@ -103,15 +103,12 @@ def testShoppingCart():
     cart = ShoppingCart()
     dellLaptop = Laptop("Dell", 999.99)
     appleLaptop = Laptop("Apple", 1349.00)
+    msiLaptop = GamingLaptop("MSI", 1599.00)
+    msiLaptop.setRam(16)
+    msiLaptop.setGpu("AMD RX 6800M0")
     cart.addLaptop(dellLaptop)
     cart.addLaptop(appleLaptop)
-
-    # laptops = cart.getLaptops()
-    # print("Shopping cart contains:")
-    # for laptop in laptops:
-    #     print(laptop)
-
-    # print("Total price is £{}".format(cart.getTotal()))
+    cart.addLaptop(msiLaptop)
 
     print(cart)
 
