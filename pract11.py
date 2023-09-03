@@ -73,6 +73,10 @@ class GamingLaptop(Laptop):
         if gpu in self.gpuOptions:
             self.gpu = gpu
 
+    def getPrice(self):
+        gpuPrice = self.gpuOptions[self.gpu]
+        return super().getPrice() + gpuPrice
+
 def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
@@ -115,3 +119,4 @@ def testGamingLaptop():
 
     gamingLaptop.setGpu("NVIDIA RTX 3070")
     print("Gaming laptop's GPU is now", gamingLaptop.getGpu())
+    print("Gaming laptop's price is now", gamingLaptop.getPrice())
