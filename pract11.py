@@ -120,3 +120,5 @@ def testGamingLaptop():
     gamingLaptop.setGpu("NVIDIA RTX 3070")
     print("Gaming laptop's GPU is now", gamingLaptop.getGpu())
     print("Gaming laptop's price is now", gamingLaptop.getPrice())
+
+    print(gamingLaptop)
