@@ -55,6 +55,13 @@ class ShoppingCart:
 
 
 class GamingLaptop(Laptop):
+    gpuOptions = {
+        "NVIDIA GTX 1650": 0,
+        "NVIDIA RTX 3070": 250,
+        "NVIDIA RTX 4080": 350,
+        "AMD RX 6800M": 280
+    }
+
     def __init__(self, brand, basePrice):
         super().__init__(brand, basePrice)
         self.gpu = "NVIDIA GTX 1650"
