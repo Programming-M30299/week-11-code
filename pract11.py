@@ -65,6 +65,9 @@ class GamingLaptop(Laptop):
     def __init__(self, brand, basePrice):
         super().__init__(brand, basePrice)
         self.gpu = "NVIDIA GTX 1650"
+    
+    def getGpu(self):
+        return self.gpu
 
 
 def testLaptop():
@@ -105,3 +108,4 @@ def testGamingLaptop():
     print("Gaming laptop's brand is", gamingLaptop.getBrand())
     print("Gaming laptop's price is", gamingLaptop.getPrice())
     print("Gaming laptop's ram is", gamingLaptop.getRam())
+    print("Gaming laptop's GPU is", gamingLaptop.getGpu())
