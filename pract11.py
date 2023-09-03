@@ -105,4 +105,3 @@ def testGamingLaptop():
     print("Gaming laptop's brand is", gamingLaptop.getBrand())
     print("Gaming laptop's price is", gamingLaptop.getPrice())
     print("Gaming laptop's ram is", gamingLaptop.getRam())
-    print(gamingLaptop)
