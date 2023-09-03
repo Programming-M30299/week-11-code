@@ -91,3 +91,11 @@ def testShoppingCart():
     # print("Total price is £{}".format(cart.getTotal()))
 
     print(cart)
+
+
+def testGamingLaptop():
+    gamingLaptop = GamingLaptop("Razer", 2399.99)
+    print("Gaming laptop's brand is", gamingLaptop.getBrand())
+    print("Gaming laptop's price is", gamingLaptop.getPrice())
+    print("Gaming laptop's ram is", gamingLaptop.getRam())
+    print(gamingLaptop)
