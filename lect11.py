@@ -26,6 +26,9 @@ class Pizza:
     def getPrice(self):
         return self.pizzaPrices[self.size]
 
+    def getToppings(self):
+        return self.toppings
+
     # String representation
     def __str__(self):
         output = "A {} pizza with toppings:".format(self.size)
