@@ -20,6 +20,9 @@ class Pizza:
         if newSize.lower() in self.pizzaPrices:
             self.size = newSize.lower()
 
+    def getSize(self):
+        return self.size
+
     def getPrice(self):
         return self.pizzaPrices[self.size]
 
