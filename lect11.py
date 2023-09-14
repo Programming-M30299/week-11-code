@@ -31,7 +31,7 @@ class Pizza:
 
     # String representation
     def __str__(self):
-        output = "A {} pizza with toppings:".format(self.size)
+        output = "{} pizza with toppings:".format(self.size)
         for topping in self.toppings:
             output += "\n- {}".format(topping)
         output += "\nPrice: £{}\n".format(self.getPrice())
@@ -107,6 +107,3 @@ def test():
     myOrder.addPizza(pizza2)
 
     print(myOrder)
-
-
-test()
