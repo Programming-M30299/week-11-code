@@ -38,6 +38,30 @@ class Pizza:
         return output
 
 
+class Order:
+    # Constructor
+    def __init__(self):
+        self.pizzas = []  # Instance Variable
+
+    # Methods
+    def addPizza(self, pizza):
+        self.pizzas.append(pizza)
+
+    def getTotalPrice(self):
+        totalPrice = 0
+        for pizza in self.pizzas:
+            totalPrice += pizza.getPrice()
+        return totalPrice
+
+    def __str__(self):
+        output = "Your order contains:\n"
+        for pizza in self.pizzas:
+            output += "{}\n".format(pizza)
+        output += "Total price of the order: £{}\n".format(
+            self.getTotalPrice())
+        return output
+
+
 class StuffedCrustPizza(Pizza):
     # Class Variable
     crustTypes = ("cheese", "garlic", "hot dog")
@@ -65,32 +89,9 @@ class StuffedCrustPizza(Pizza):
         output += "\nPrice: £{}\n".format(self.getPrice())
         return output
 
-
-class Order:
-    # Constructor
-    def __init__(self):
-        self.pizzas = []  # Instance Variable
-
-    # Methods
-    def addPizza(self, pizza):
-        self.pizzas.append(pizza)
-
-    def getTotalPrice(self):
-        totalPrice = 0
-        for pizza in self.pizzas:
-            totalPrice += pizza.getPrice()
-        return totalPrice
-
-    def __str__(self):
-        output = "Your order contains:\n"
-        for pizza in self.pizzas:
-            output += "{}\n".format(pizza)
-        output += "Total price of the order: £{}\n".format(
-            self.getTotalPrice())
-        return output
-
-
 # Test the classes
+
+
 def test():
     myOrder = Order()
     pizza1 = Pizza("small")
