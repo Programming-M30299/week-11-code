@@ -73,6 +73,9 @@ class StuffedCrustPizza(Pizza):
             self.crust = crust.lower()  # Instance Variable
 
     # Methods
+    def getCrust(self):
+        return self.crust
+
     def setCrust(self, newCrust):
         if newCrust in self.crustTypes:
             self.crust = newCrust
@@ -81,16 +84,16 @@ class StuffedCrustPizza(Pizza):
         return super().getPrice() + 2  # Stuffed crust is £2 more
 
     def __str__(self):
-        output = "A {} stuffed crust pizza with:".format(self.size)
+        output = str(self.size)
+        output += " stuffed crust pizza with:"
         for topping in self.toppings:
             output += "\n- {}".format(topping)
         output += "\nCrust type: {}".format(self.crust)
         output += "\nPrice: £{}\n".format(self.getPrice())
         return output
 
+
 # Test the classes
-
-
 def test():
     myOrder = Order()
     pizza1 = Pizza("small")
