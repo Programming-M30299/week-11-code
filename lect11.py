@@ -61,22 +61,6 @@ class Order:
         return output
 
 
-myOrder = Order()
-
-pizza1 = Pizza("small")  # Costs: £8
-pizza1.addTopping("Pepperoni")
-
-pizza2 = Pizza("medium")  # Costs: £10
-pizza2.addTopping("Ham")
-pizza2.addTopping("Mushrooms")
-
-myOrder.addPizza(pizza1)
-myOrder.addPizza(pizza2)
-print(myOrder.getTotalPrice())  # 18
-
-print(myOrder)
-
-
 class StuffedCrustPizza(Pizza):
     # Class Variable
     crustTypes = ("cheese", "garlic", "hot dog")
