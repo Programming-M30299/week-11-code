@@ -14,7 +14,7 @@ class Pizza:
         self.toppings.add(topping.lower())
 
     def removeTopping(self, topping):
-        self.toppings.remove(topping)
+        self.toppings.remove(topping.lower())
 
     def setSize(self, newSize):
         if newSize.lower() in self.pizzaPrices:
