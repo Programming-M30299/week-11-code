@@ -26,8 +26,8 @@ class Laptop:
             self.ram = ram
 
     def __str__(self):
-        output = "{} Laptop with {} GB RAM".format(self.brand, self.ram)
-        output += " priced at £{}".format(self.getPrice())
+        output = f"{self.brand} Laptop with {self.ram} GB RAM "
+        output += f"priced at £{self.getPrice()}"
         return output
 
 
@@ -87,14 +87,14 @@ def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
     print("laptop's RAM is", laptop.getRam())
-    print("laptop's price is", laptop.getPrice())
+    print("laptop's price is", laptop.getPrice()) # 999.99
 
     laptop.setRam(32)
     print("laptop's RAM is now", laptop.getRam())
     laptop.setRam(30)
     print("laptop's RAM is still", laptop.getRam())
 
-    print("laptop's price is now", laptop.getPrice())
+    print("laptop's price is now", laptop.getPrice()) # 999.99 + 200 = 1199.99
 
     print(laptop)
 
