@@ -49,8 +49,8 @@ class ShoppingCart:
     def __str__(self):
         output = "Shopping cart contains:\n"
         for laptop in self.laptops:
-            output += str(laptop) + "\n"
-        output += "Total price is £{}".format(self.total)
+            output += f"{laptop}\n"
+        output += f"Total price is £{self.total}"
         return output
 
 
@@ -78,8 +78,8 @@ class GamingLaptop(Laptop):
         return super().getPrice() + gpuPrice
 
     def __str__(self):
-        output = "{} Laptop with {} GB RAM".format(self.brand, self.ram)
-        output += " and {} GPU priced at £{}".format(self.gpu, self.getPrice())
+        output = f"{self.brand} Laptop with {self.ram} GB RAM "
+        output += f"and {self.gpu} priced at £{self.getPrice()}"
         return output
 
 
@@ -87,14 +87,14 @@ def testLaptop():
     laptop = Laptop("Dell", 999.99)
     print("laptop's brand is", laptop.getBrand())
     print("laptop's RAM is", laptop.getRam())
-    print("laptop's price is", laptop.getPrice()) # 999.99
+    print("laptop's price is", laptop.getPrice())  # 999.99
 
     laptop.setRam(32)
     print("laptop's RAM is now", laptop.getRam())
     laptop.setRam(30)
     print("laptop's RAM is still", laptop.getRam())
 
-    print("laptop's price is now", laptop.getPrice()) # 999.99 + 200 = 1199.99
+    print("laptop's price is now", laptop.getPrice())  # 999.99 + 200 = 1199.99
 
     print(laptop)
 
@@ -109,6 +109,11 @@ def testShoppingCart():
     cart.addLaptop(dellLaptop)
     cart.addLaptop(appleLaptop)
     cart.addLaptop(msiLaptop)
+
+    print("Shopping cart contains:")
+    for laptop in cart.getLaptops():
+        print(laptop)
+    print(f"Total price is £{cart.getTotal()}")
 
     print(cart)
 

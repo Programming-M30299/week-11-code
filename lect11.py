@@ -31,10 +31,10 @@ class Pizza:
 
     # String representation
     def __str__(self):
-        output = "{} pizza with:".format(self.size)
+        output = f"{self.size} pizza with:"
         for topping in self.toppings:
-            output += "\n- {}".format(topping)
-        output += "\nPrice: £{}\n".format(self.getPrice())
+            output += f"\n- {topping}"
+        output += f"\nPrice: £{self.getPrice()}\n"
         return output
 
 
@@ -57,7 +57,7 @@ class Order:
         output = "Your order contains:\n"
         for pizza in self.pizzas:
             output += str(pizza)
-        output += "Total: £{}".format(self.getTotalPrice())
+        output += f"Total: £{self.getTotalPrice()}"
         return output
 
 
@@ -84,12 +84,11 @@ class StuffedCrustPizza(Pizza):
         return super().getPrice() + 2  # Stuffed crust is £2 more
 
     def __str__(self):
-        output = str(self.size)
-        output += " stuffed crust pizza with:"
+        output = f"A {self.size} stuffed crust pizza with:"
         for topping in self.toppings:
-            output += "\n- {}".format(topping)
-        output += "\nCrust type: {}".format(self.crust)
-        output += "\nPrice: £{}\n".format(self.getPrice())
+            output += f"\n- {topping}"
+        output += f"\nCrust type: {self.crust}"
+        output += f"\nPrice: £{self.getPrice()}\n"
         return output
 
 
