@@ -1,15 +1,13 @@
 class Pizza:
-    # Class Variable
+
     pizzaPrices = {"small": 8, "medium": 10, "large": 12}
 
-    # Constructor
     def __init__(self, size):
-        self.toppings = set()  # Instance Variable
-        self.size = "small"  # Default size
-        if size.lower() in self.pizzaPrices:  # Check if size is valid
-            self.size = size.lower()  # Instance Variable
+        self.toppings = set()
+        self.size = "small"
+        if size.lower() in self.pizzaPrices:
+            self.size = size.lower()
 
-    # Methods
     def addTopping(self, topping):
         self.toppings.add(topping.lower())
 
@@ -29,7 +27,6 @@ class Pizza:
     def getToppings(self):
         return self.toppings
 
-    # String representation
     def __str__(self):
         output = f"{self.size} pizza with:"
         for topping in self.toppings:
@@ -39,11 +36,10 @@ class Pizza:
 
 
 class Order:
-    # Constructor
-    def __init__(self):
-        self.pizzas = []  # Instance Variable
 
-    # Methods
+    def __init__(self):
+        self.pizzas = []
+
     def addPizza(self, pizza):
         self.pizzas.append(pizza)
 
@@ -62,17 +58,15 @@ class Order:
 
 
 class StuffedCrustPizza(Pizza):
-    # Class Variable
+    
     crustTypes = ("cheese", "garlic", "hot dog")
 
-    # Constructor
     def __init__(self, size, crust):
-        super().__init__(size)  # Call to parent constructor
-        self.crust = "cheese"  # Default crust
+        super().__init__(size)
+        self.crust = "cheese"
         if crust.lower() in self.crustTypes:
-            self.crust = crust.lower()  # Instance Variable
+            self.crust = crust.lower()
 
-    # Methods
     def getCrust(self):
         return self.crust
 
@@ -81,7 +75,7 @@ class StuffedCrustPizza(Pizza):
             self.crust = newCrust
 
     def getPrice(self):
-        return super().getPrice() + 2  # Stuffed crust is £2 more
+        return super().getPrice() + 2
 
     def __str__(self):
         output = f"A {self.size} stuffed crust pizza with:"
@@ -92,7 +86,6 @@ class StuffedCrustPizza(Pizza):
         return output
 
 
-# Test the classes
 def test():
     myOrder = Order()
     pizza1 = Pizza("small")
