@@ -1,4 +1,5 @@
 class Laptop:
+
     ramOptions = {
         4: 0,
         8: 50,
@@ -32,6 +33,7 @@ class Laptop:
 
 
 class ShoppingCart:
+
     def __init__(self):
         self.laptops = []
         self.total = 0
@@ -55,6 +57,7 @@ class ShoppingCart:
 
 
 class GamingLaptop(Laptop):
+
     gpuOptions = {
         "NVIDIA GTX 1650": 0,
         "NVIDIA RTX 3070": 250,
