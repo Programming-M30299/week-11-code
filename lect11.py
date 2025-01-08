@@ -1,7 +1,6 @@
 class Pizza:
 
-    valid_toppings = {'cheese', 'pepperoni',
-                      'mushrooms', 'olives'}
+    valid_toppings = {'cheese', 'pepperoni', 'mushrooms', 'olives'}
 
     def __init__(self, size):
         self.size = size
@@ -34,7 +33,7 @@ class StuffedCrustPizza(Pizza):
 
     @crust.setter
     def crust(self, new_crust):
-        if new_crust == 'mozzarella' or new_crust == 'hot dog':
+        if new_crust in {'mozzarella', 'hot dog'}:
             self._crust = new_crust
 
     def __str__(self):
