@@ -7,29 +7,46 @@ class Laptop:
         32: 200
     }
 
-    def __init__(self, brand, basePrice):
+    def __init__(self, brand, base_price):
         self.brand = brand
-        self.basePrice = basePrice
-        self.ram = 4
+        self.basePrice = base_price
+        self._ram = 4
 
-    def getBrand(self):
-        return self.brand
+    @property
+    def ram(self):
+        return self._ram
+    
+    @ram.setter
+    def ram(self, new_ram):
+        if new_ram in self.ramOptions:
+            self._ram = new_ram
 
-    def getRam(self):
-        return self.ram
-
-    def getPrice(self):
-        ramPrice = self.ramOptions[self.ram]
-        return self.basePrice + ramPrice
-
-    def setRam(self, ram):
-        if ram in self.ramOptions:
-            self.ram = ram
+    def calculatePrice(self):
+        ram_price = self.ramOptions[self.ram]
+        total_price = self.basePrice + ram_price
+        return total_price
 
     def __str__(self):
-        output = f"{self.brand} Laptop with {self.ram} GB RAM "
-        output += f"priced at £{self.getPrice()}"
+        output = f"{self.brand} Laptop with {self.ram} GB RAM"
+        output += f" priced at £{self.calculatePrice()}"
         return output
+
+def testLaptop():
+    laptop = Laptop("Dell", 999.99)
+
+    print(f"Laptop's brand is {laptop.brand}")
+    print(f"Laptop's RAM is {laptop.ram} GB")
+    print(f"Laptop's price is £{laptop.calculatePrice()}")
+
+    laptop.ram = 32
+    print(f"Laptop's RAM is now {laptop.ram} GB")   
+    laptop.ram = 30
+    print(f"Laptop's RAM is still {laptop.ram} GB")#
+
+    # The new price should be: 999.99 + 200 = 1199.99
+    print(f"Laptop's price is now £{laptop.calculatePrice()}")
+
+    print(laptop)
 
 
 class ShoppingCart:
@@ -84,22 +101,6 @@ class GamingLaptop(Laptop):
         output = f"{self.brand} Laptop with {self.ram} GB RAM "
         output += f"and {self.gpu} priced at £{self.getPrice()}"
         return output
-
-
-def testLaptop():
-    laptop = Laptop("Dell", 999.99)
-    print("laptop's brand is", laptop.getBrand())
-    print("laptop's RAM is", laptop.getRam())
-    print("laptop's price is", laptop.getPrice())  # 999.99
-
-    laptop.setRam(32)
-    print("laptop's RAM is now", laptop.getRam())
-    laptop.setRam(30)
-    print("laptop's RAM is still", laptop.getRam())
-
-    print("laptop's price is now", laptop.getPrice())  # 999.99 + 200 = 1199.99
-
-    print(laptop)
 
 
 def testShoppingCart():
