@@ -30,6 +30,38 @@ class Laptop:
         output = f"{self.brand} Laptop with {self.ram} GB RAM"
         output += f" priced at £{self.calculate_price()}"
         return output
+    
+
+class ShoppingCart:
+
+    def __init__(self):
+        self.laptops = []
+        self.total = 0
+
+    def add_laptop(self, laptop):
+        self.laptops.append(laptop)
+        self.total += laptop.calculate_price()
+
+    def __str__(self):
+        output = "Shopping cart contains:\n"
+        for laptop in self.laptops:
+            output += f"{laptop}\n"
+        output += f"Total price is £{self.total}"
+        return output
+
+
+
+def testShoppingCart():
+    cart = ShoppingCart()
+    dellLaptop = Laptop("Dell", 999.99)
+    appleLaptop = Laptop("Apple", 1349.00)
+    cart.add_laptop(dellLaptop)
+    cart.add_laptop(appleLaptop)
+
+    print(f"Shopping cart's total is £{cart.total}")
+
+    print(cart)
+
 
 def test_laptop():
     laptop = Laptop("Dell", 999.99)
@@ -43,31 +75,6 @@ def test_laptop():
     print(f"Laptop's price is £{laptop.calculate_price()}") # 999.99
 
     print(laptop)
-
-
-# class ShoppingCart:
-
-#     def __init__(self):
-#         self.laptops = []
-#         self.total = 0
-
-#     def addLaptop(self, laptop):
-#         self.laptops.append(laptop)
-#         self.total += laptop.getPrice()
-
-#     def getLaptops(self):
-#         return self.laptops
-
-#     def getTotal(self):
-#         return self.total
-
-#     def __str__(self):
-#         output = "Shopping cart contains:\n"
-#         for laptop in self.laptops:
-#             output += f"{laptop}\n"
-#         output += f"Total price is £{self.total}"
-#         return output
-
 
 # class GamingLaptop(Laptop):
 
@@ -97,25 +104,6 @@ def test_laptop():
 #         output = f"{self.brand} Laptop with {self.ram} GB RAM "
 #         output += f"and {self.gpu} priced at £{self.getPrice()}"
 #         return output
-
-
-# def testShoppingCart():
-#     cart = ShoppingCart()
-#     dellLaptop = Laptop("Dell", 999.99)
-#     appleLaptop = Laptop("Apple", 1349.00)
-#     msiLaptop = GamingLaptop("MSI", 1599.00)
-#     msiLaptop.setRam(16)
-#     msiLaptop.setGpu("AMD RX 6800M0")
-#     cart.addLaptop(dellLaptop)
-#     cart.addLaptop(appleLaptop)
-#     cart.addLaptop(msiLaptop)
-
-#     print("Shopping cart contains:")
-#     for laptop in cart.getLaptops():
-#         print(laptop)
-#     print(f"Total price is £{cart.getTotal()}")
-
-#     print(cart)
 
 
 # def testGamingLaptop():
