@@ -50,6 +50,7 @@ class ShoppingCart:
         output += f"Total price is £{self.total}"
         return output
 
+
 class GamingLaptop(Laptop):
 
     gpu_options = {
@@ -96,7 +97,6 @@ def test_gaming_laptop():
     print(f"Laptop's price is £{laptop.calculate_price()}")
 
     print(laptop)
-
 
 
 def test_shopping_cart():
