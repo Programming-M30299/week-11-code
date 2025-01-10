@@ -60,8 +60,8 @@ class GamingLaptop(Laptop):
         "AMD RX 6800M": 280
     }
 
-    def __init__(self, brand, basePrice):
-        super().__init__(brand, basePrice)
+    def __init__(self, brand, base_price):
+        super().__init__(brand, base_price)
         self._gpu = "NVIDIA GTX 1650"
 
     @property
