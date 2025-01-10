@@ -60,6 +60,7 @@ def test_shopping_cart():
     cart.add_laptop(appleLaptop)
 
     print(f"Shopping cart's total is £{cart.total}")
+    print(f"Shopping cart's laptops is {cart.laptops}")
 
     print(cart)
 
