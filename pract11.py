@@ -54,10 +54,10 @@ class ShoppingCart:
 
 def test_shopping_cart():
     cart = ShoppingCart()
-    dellLaptop = Laptop("Dell", 999.99)
-    appleLaptop = Laptop("Apple", 1349.00)
-    cart.add_laptop(dellLaptop)
-    cart.add_laptop(appleLaptop)
+    dell_laptop = Laptop("Dell", 999.99)
+    apple_laptop = Laptop("Apple", 1349.00)
+    cart.add_laptop(dell_laptop)
+    cart.add_laptop(apple_laptop)
 
     print(f"Shopping cart's total is £{cart.total}")
     print(f"Shopping cart's laptops is {cart.laptops}")
