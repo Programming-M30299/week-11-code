@@ -86,17 +86,17 @@ class GamingLaptop(Laptop):
 
 
 def test_gaming_laptop():
-    laptop = GamingLaptop("Razer", 2399.99)
-    print(f"Laptop's brand is {laptop.brand}")
-    print(f"Laptop's GPU is {laptop.gpu}")
-    print(f"Laptop's RAM is {laptop.ram} GB")
+    gaming_laptop = GamingLaptop("Razer", 2399.99)
+    print(f"Gaming laptop's brand is {gaming_laptop.brand}")
+    print(f"Gaming laptop's GPU is {gaming_laptop.gpu}")
+    print(f"Gaming laptop's RAM is {gaming_laptop.ram} GB")
 
-    laptop.gpu = "NVIDIA RTX 3070"
-    laptop.ram = 16
+    gaming_laptop.gpu = "NVIDIA RTX 3070"
+    gaming_laptop.ram = 16
 
-    print(f"Laptop's price is £{laptop.calculate_price()}")
+    print(f"Gaming laptop's price is £{gaming_laptop.calculate_price()}")
 
-    print(laptop)
+    print(gaming_laptop)
 
 
 def test_shopping_cart():
