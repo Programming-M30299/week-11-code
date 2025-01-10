@@ -51,7 +51,7 @@ class ShoppingCart:
 
 
 
-def testShoppingCart():
+def test_shopping_cart():
     cart = ShoppingCart()
     dellLaptop = Laptop("Dell", 999.99)
     appleLaptop = Laptop("Apple", 1349.00)
@@ -119,4 +119,4 @@ def test_laptop():
 
 #     print(gamingLaptop)
 
-test_laptop()
+test_shopping_cart()
