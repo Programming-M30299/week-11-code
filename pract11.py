@@ -50,6 +50,53 @@ class ShoppingCart:
         output += f"Total price is £{self.total}"
         return output
 
+class GamingLaptop(Laptop):
+
+    gpu_options = {
+        "NVIDIA GTX 1650": 0,
+        "NVIDIA RTX 3070": 250,
+        "NVIDIA RTX 4080": 350,
+        "AMD RX 6800M": 280
+    }
+
+    def __init__(self, brand, basePrice):
+        super().__init__(brand, basePrice)
+        self._gpu = "NVIDIA GTX 1650"
+
+    @property
+    def gpu(self):
+        return self._gpu
+    
+    @gpu.setter
+    def gpu(self, new_gpu):
+        if new_gpu in self.gpu_options:
+            self._gpu = new_gpu
+
+    def calculate_price(self):
+        gpu_price = self.gpu_options[self.gpu]
+        laptop_price = super().calculate_price()
+        total_price = laptop_price + gpu_price
+        return total_price
+
+    def __str__(self):
+        output = f"{self.brand} Laptop with {self.ram} GB RAM "
+        output += f"and {self.gpu} priced at £{self.calculate_price()}"
+        return output
+
+
+def test_gaming_laptop():
+    laptop = GamingLaptop("Razer", 2399.99)
+    print(f"Laptop's brand is {laptop.brand}")
+    print(f"Laptop's GPU is {laptop.gpu}")
+    print(f"Laptop's RAM is {laptop.ram} GB")
+
+    laptop.gpu = "NVIDIA RTX 3070"
+    laptop.ram = 16
+
+    print(f"Laptop's price is £{laptop.calculate_price()}")
+
+    print(laptop)
+
 
 
 def test_shopping_cart():
@@ -75,48 +122,3 @@ def test_laptop():
     print(f"Laptop's price is £{laptop.calculate_price()}") # 999.99
 
     print(laptop)
-
-# class GamingLaptop(Laptop):
-
-#     gpuOptions = {
-#         "NVIDIA GTX 1650": 0,
-#         "NVIDIA RTX 3070": 250,
-#         "NVIDIA RTX 4080": 350,
-#         "AMD RX 6800M": 280
-#     }
-
-#     def __init__(self, brand, basePrice):
-#         super().__init__(brand, basePrice)
-#         self.gpu = "NVIDIA GTX 1650"
-
-#     def getGpu(self):
-#         return self.gpu
-
-#     def setGpu(self, gpu):
-#         if gpu in self.gpuOptions:
-#             self.gpu = gpu
-
-#     def getPrice(self):
-#         gpuPrice = self.gpuOptions[self.gpu]
-#         return super().getPrice() + gpuPrice
-
-#     def __str__(self):
-#         output = f"{self.brand} Laptop with {self.ram} GB RAM "
-#         output += f"and {self.gpu} priced at £{self.getPrice()}"
-#         return output
-
-
-# def testGamingLaptop():
-#     gamingLaptop = GamingLaptop("Razer", 2399.99)
-#     print("Gaming laptop's brand is", gamingLaptop.getBrand())
-#     print("Gaming laptop's price is", gamingLaptop.getPrice())
-#     print("Gaming laptop's ram is", gamingLaptop.getRam())
-#     print("Gaming laptop's GPU is", gamingLaptop.getGpu())
-
-#     gamingLaptop.setGpu("NVIDIA RTX 3070")
-#     print("Gaming laptop's GPU is now", gamingLaptop.getGpu())
-#     print("Gaming laptop's price is now", gamingLaptop.getPrice())
-
-#     print(gamingLaptop)
-
-test_shopping_cart()
