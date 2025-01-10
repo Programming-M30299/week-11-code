@@ -40,7 +40,8 @@ class ShoppingCart:
 
     def add_laptop(self, laptop):
         self.laptops.append(laptop)
-        self.total += laptop.calculate_price()
+        laptop_price = laptop.calculate_price()
+        self.total += laptop_price
 
     def __str__(self):
         output = "Shopping cart contains:\n"
