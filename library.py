@@ -49,14 +49,14 @@ class Library:
         # Remove the pass and write code for this method
         pass
 
-    def borrow_book(self, title):
+    def borrow_book(self, isbn):
         for book in self.books:
-            if book.title == title:
+            if book.isbn == isbn:
                 # Remove the pass and write code for this method
                 # (check if the book is available, then call its borrow method)
                 pass
 
-    def return_book(self, title):
+    def return_book(self, isbn):
         # Remove the pass and write code for this method, see borrow_book
         pass
 
